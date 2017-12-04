@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FilmListPage } from './page';
 import { Film } from './viewModel';
 import { filmService } from '../../api/filmService';
-import {mapFilmModelToVm} from './mappers';
+import { mapFilmModelToVm } from './mappers';
 
 interface State {
 	filmList: Film[];

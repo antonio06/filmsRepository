@@ -1,1 +1,1 @@
-export {FilmListContainer} from './container';
+export { FilmListContainer } from './container';
