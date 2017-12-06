@@ -9,7 +9,15 @@ export function mapFilmModelToVm(film: model.Film): viewModel.Film {
 		year: parseInt(film.Year),
 		released: film.Released,
 		genre: film.Genre,
-		director: film.Director,
+		director: getDirector(film.Director),
 		plot: film.Plot,
 	};
+}
+
+function getDirector(director: string): string {
+	if (director === 'N/A') {
+		return 'Unknown';
+	} else {
+		return director;
+	}
 }

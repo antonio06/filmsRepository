@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Film } from './viewModel';
 import './filmComponent.css';
 
@@ -14,7 +15,7 @@ export const FilmComponent: React.StatelessComponent<Props> = (props) => {
 			</div>
 			<h2 className="film__title">{props.film.title}</h2>
 			<div className="film__buttonContainer">
-				<button type="button" className="btn btn-primary" >More Details</button>
+				<Link to={`/details/${props.film.id}`} className="btn btn-primary">More Details</Link>
 			</div>
 		</div>
 	);

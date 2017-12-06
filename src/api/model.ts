@@ -16,7 +16,7 @@ export interface Film {
 	Metascore: string,
 	imdbRating: string,
 	imdbVotes: string,
-	imdbID: string,
+	id: string,
 	Type: string,
 	Response: string,
 	Images: string[]

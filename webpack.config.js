@@ -14,7 +14,6 @@ module.exports = {
     app: './index.tsx',
     appStyles: [
       '../node_modules/bootstrap/dist/css/bootstrap.css',
-      './styles.css',
     ],
   },
   output: {
