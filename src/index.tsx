@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-import {FilmListContainer} from './components/main';
+import { App } from './app';
 
 ReactDOM.render(
-	<FilmListContainer/>,
+	<App />,
 	document.getElementById('root')
 );
