@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "start:server": "json-server --watch db.json",
     "build": "rimraf dist && webpack",
     "build:prod": "rimraf dist && webpack -p"
   },
@@ -29,6 +30,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
+    "json-server": "^0.12.1",
     "node-sass": "^4.5.3",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
@@ -41,6 +43,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0"
   }
 }

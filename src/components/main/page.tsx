@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Film } from './viewModel';
-import { FilmComponent } from './filmComponent'
+import { FilmComponent } from './filmComponent';
+import './page.css';
 
 interface Props {
 	filmList: Film[];
@@ -14,11 +15,10 @@ export class FilmListPage extends React.Component<Props, {}> {
 
 	render() {
 		return (
-			<div className="filmsContainer">
+			<div className="films">
 				{
-					this.props.filmList.map(
-						(film) =>
-							<FilmComponent film={film} key={film.id} />
+					this.props.filmList.map((film) =>
+						<FilmComponent film={film} key={film.id} />
 					)
 				}
 			</div>

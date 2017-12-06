@@ -15,19 +15,18 @@ export class FilmListContainer extends React.Component<{}, State> {
 	}
 
 	fetchFilm = () => {
-		filmService.getFilms().then((response) => {
-			const mappedFilms = response.map((film) => {
-				return mapFilmModelToVm(film);
-			});
+		filmService.getFilms().then((films) => {
 			this.setState({
-				filmList: mappedFilms
+				filmList: films.map((film) => mapFilmModelToVm(film)),
 			});
 		});
 	};
 	render() {
 		return (
-			<FilmListPage filmList={this.state.filmList}
-				fetchFilmList={this.fetchFilm} />
+			<FilmListPage
+				filmList={this.state.filmList}
+				fetchFilmList={this.fetchFilm}
+			/>
 		);
 	}
 }

@@ -8,27 +8,28 @@ var basePath = __dirname;
 module.exports = {
   context: path.join(basePath, "src"),
   resolve: {
-      extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx']
   },
-
-  entry: [
-    './index.tsx',
-    '../node_modules/bootstrap/dist/css/bootstrap.css',
-    './styles.css',
-  ],
+  entry: {
+    app: './index.tsx',
+    appStyles: [
+      '../node_modules/bootstrap/dist/css/bootstrap.css',
+      './styles.css',
+    ],
+  },
   output: {
     path: path.join(basePath, 'dist'),
-    filename: 'bundle.js'
+    filename: '[chunkhash][name].js',
   },
 
   devtool: 'source-map',
 
   devServer: {
-       contentBase: './dist', // Content base
-       inline: true, // Enable watch and live reload
-       host: 'localhost',
-       port: 8080,
-       stats: 'errors-only'
+    contentBase: './dist', // Content base
+    inline: true, // Enable watch and live reload
+    host: 'localhost',
+    port: 8080,
+    stats: 'errors-only'
   },
 
   module: {
@@ -60,7 +61,7 @@ module.exports = {
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },  
+      },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
@@ -68,11 +69,11 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },                
+      },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader'
-      },      
+      },
     ]
   },
   plugins: [
